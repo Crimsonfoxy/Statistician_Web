@@ -212,6 +212,24 @@
 		    return $row['total'];		    
 		}
 		
+		public function getPVPKills($limit) {
+		    return mysql_query('SELECT p.player_name killer, 
+		    						p.uuid killerID,
+		    						p2.player_name victim,
+		    						p2.uuid killedID,
+		    						k.time time, 
+		    						r.description weapon 
+		    					FROM kills k
+                                INNER JOIN resource_desc r ON k.killed_using = r.resource_id
+                                INNER JOIN players p ON k.killed_by_uuid = p.uuid
+                                INNER JOIN players p2 ON k.killed_uuid = p2.uuid
+                                WHERE k.killed = 999 
+                                	AND k.killed_by = 999
+                                ORDER BY time DESC 
+		    					'.$limit.'');
+		}		
+
+		
 		public function getKillTablePVP($limit = false, $limitStart = 0, $limitNumber = 0) {
 			$playerCreatureId = QueryUtils::getCreatureIdByName("Player");
 			if (!$limit)
@@ -234,6 +252,29 @@
                                                         AND killed_by != 18
                                                         AND killed_by != 0'));
 		    return $row['total'];
+		}
+		
+		public function getPVEKills($limit) {
+		    return mysql_query('SELECT r.description weapon, 
+		    						c.creature_name killer, 
+		    						p.player_name killer_player, 
+		    						p.uuid killerID,
+		    						c2.creature_name killed, 
+		    						p2.player_name killed_player, 
+		    						p2.uuid killedID,
+		    						k.time time 
+		    					FROM kills k
+                                INNER JOIN resource_desc r ON k.killed_using = r.resource_id
+                                LEFT JOIN creatures c ON k.killed_by = c.id
+                                LEFT JOIN creatures c2 ON k.killed = c2.id
+                                LEFT JOIN players p ON k.killed_by_uuid = p.uuid
+                                LEFT JOIN players p2 ON k.killed_uuid = p2.uuid
+                                WHERE k.killed_by != 0
+                                	AND k.killed_by != 18
+                                	AND k.killed != 0
+                                	AND k.killed != 18
+                                ORDER BY time DESC
+		    					'.$limit.'');		    
 		}
 		
 		public function getKillTablePVE($limit = false, $limitStart = 0, $limitNumber = 0) {
@@ -260,10 +301,24 @@
 														ORDER BY id DESC LIMIT '.$limitStart.', '.$limitNumber);
 		}
 		
-		public function getTotalOtherKilles() {
+		public function getTotalOtherKills() {
 		    $row = mysql_fetch_assoc(mysql_query('SELECT COUNT(id) total FROM kills
-		                                                        WHERE killed_by != 999'));
+                                                    WHERE killed_by = 0
+    													OR killed_by = 18'));
 		    return $row['total'];
+		}
+		
+		public function getOtherKills($limit) {
+		    return mysql_query('SELECT p.player_name killed, 
+		    						t.description type, 
+		    						k.time 
+		    					FROM kills k
+                                INNER JOIN kill_types t ON k.kill_type = t.id
+                                INNER JOIN players p ON k.killed_uuid = p.uuid
+                                WHERE killed_by = 0
+                                	OR killed_by = 18
+                                ORDER BY time DESC
+		    					'.$limit.'');	
 		}
 		
 		public function getKillTableOther($limit = false, $limitStart = 0, $limitNumber = 0) {
