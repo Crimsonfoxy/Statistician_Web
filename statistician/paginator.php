@@ -27,7 +27,7 @@ class Paginator{
 	{
             
             $page = (isset($_GET['page']) ? $_GET['page'] : 0);
-            $ipp = (isset($_GET['ipp']) ? $_GET['ipp'] : 0);
+            $ipp = (isset($_GET['ipp']) ? $_GET['ipp'] : $this->default_ipp);
             
 		if($ipp == 'All')
 		{

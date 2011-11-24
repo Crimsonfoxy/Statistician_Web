@@ -97,36 +97,27 @@
 		}
 		
 		public function getBlocksMostDestroyed() {
-            
-            $highest = 0;
-            $idOfHighest = -1;
-            
-            foreach (QueryUtils::getResourceTable() as $resource) {
-                $test = $this->getBlocksDestroyedOfType($resource['resource_id']);
-                if ($test > $highest) {
-                    $highest = $test;
-                    $idOfHighest = $resource['resource_id'];
+                    $row = mysql_fetch_assoc(mysql_query('SELECT block_id, 
+                                                            SUM(num_placed) AS sum 
+                                                            FROM blocks 
+                                                            WHERE uuid = "'. $this->_playerUUID .'"
+                                                            GROUP BY block_id                                                            
+                                                            ORDER BY sum DESC 
+                                                            LIMIT 0,1'));
+                    return $row;
                 }
-            }
-            
-            return $idOfHighest;
-        }
         
-        public function getBlocksMostPlaced() {
-  
-            $highest = 0;
-            $idOfHighest = -1;
-            
-            foreach (QueryUtils::getResourceTable() as $resource) {
-                $test = $this->getBlocksPlacedOfType($resource['resource_id']);
-                if ($test > $highest) {
-                    $highest = $test;
-                    $idOfHighest = $resource['resource_id'];
+                public function getBlocksMostPlaced() {
+
+                    $row = mysql_fetch_assoc(mysql_query('SELECT block_id, 
+                                                            SUM(num_destroyed) AS sum 
+                                                            FROM blocks 
+                                                            WHERE uuid = "'. $this->_playerUUID .'"
+                                                            GROUP BY block_id                                                            
+                                                            ORDER BY sum DESC 
+                                                            LIMIT 0,1'));
+                    return $row;
                 }
-            }
-            
-            return $idOfHighest;
-        }
 		
 		public function getPickedUpOfType($id) {
 			$row = mysql_fetch_assoc(mysql_query("SELECT num_pickedup FROM pickup_drop WHERE uuid = '{$this->_playerUUID}' AND item = '{$id}'"));
@@ -153,104 +144,63 @@
 		}
 		
 		public function getMostPickedUp() {
-            $highest = 0;
-            $idOfHighest = -1;
-            
-            foreach (QueryUtils::getResourceTable() as $resource) {
-                $test = $this->getPickedUpOfType($resource['resource_id']);
-                if ($test > $highest) {
-                    $highest = $test;
-                    $idOfHighest = $resource['resource_id'];
+                    $row = mysql_fetch_assoc(mysql_query('SELECT item,
+                                                            SUM(num_pickedup) AS sum 
+                                                            FROM pickup_drop
+                                                            WHERE uuid = "'. $this->_playerUUID .'"
+                                                            GROUP BY item 
+                                                            ORDER BY sum DESC 
+                                                            LIMIT 0,1'));  
+                    return $row['item'];  
                 }
-            }
-            
-            return $idOfHighest;
-        }
         
-        public function getMostDropped() {
-            $highest = 0;
-            $idOfHighest = -1;
-            
-            foreach (QueryUtils::getResourceTable() as $resource) {
-                $test = $this->getDroppedOfType($resource['resource_id']);
-                if ($test > $highest) {
-                    $highest = $test;
-                    $idOfHighest = $resource['resource_id'];
-                }
+            public function getMostDropped() {
+                $row = mysql_fetch_assoc(mysql_query('SELECT item,
+                                                        SUM(num_dropped) AS sum 
+                                                        FROM pickup_drop
+                                                        WHERE uuid = "'. $this->_playerUUID .'"
+                                                        GROUP BY item 
+                                                        ORDER BY sum DESC 
+                                                        LIMIT 0,1'));  
+                return $row['item'];  
             }
-            
-            return $idOfHighest;
-        }
 		
 		public function getPlayerKillTable() {
 			return QueryUtils::get2DArrayFromQuery("SELECT * FROM kills WHERE killed_by_uuid = '{$this->_playerUUID}'");
 		}
 		
 		public function getMostDangerousWeapon() {
-            $highest = 0;
-            $idOfHighest = -1;
-            $idOfNone = QueryUtils::getResourceIdByName("None");
-            
-            foreach (QueryUtils::getResourceTable() as $resource) {
-            	
-            	if ($resource['resource_id'] == $idOfNone) continue;
-            	
-            	$res = $this->getPlayerKillTableUsing($resource['resource_id']);
-            	
-            	if ($res)
-                	$test = count($res);
-                	else
-                	$test = 0;
-                	
-                if ($test > $highest) {
-                    $highest = $test;
-                    $idOfHighest = $resource['resource_id'];
+                    $row = mysql_fetch_assoc(mysql_query('SELECT `killed_using` name, COUNT(`killed_using`) count
+                                                            FROM kills 
+                                                            WHERE killed_using != -1
+                                                            AND killed_by_uuid = "'. $this->_playerUUID .'"
+                                                            GROUP BY `killed_using`
+                                                            ORDER BY count DESC
+                                                            LIMIT 0,1'));
+                    return $row;
                 }
-            }
-            
-            return $idOfHighest;
+        
+        public function getMostKilledPVP() {
+            $row = mysql_fetch_assoc(mysql_query('SELECT `killed_uuid` name, COUNT(`killed_uuid`) count
+                                                    FROM kills
+                                                    WHERE `killed_uuid` IS NOT NULL
+                                                    	AND `killed_uuid` != " "
+                                                    	AND `killed_by_uuid` = "'. $this->_playerUUID .'" 
+                                                    GROUP BY `killed_uuid`
+                                                    ORDER BY count DESC
+                                                    LIMIT 0,1'));
+            return $row;
         }
         
-        public function getMostKilledPVP($serverObj) {
-            $highest = 0;
-            $playerOfHighest = null;
-            
-            foreach ($serverObj->getAllPlayers() as $player) {
-            	$res = $this->getPlayerKillPVP($player->getUUID());
-            	
-            	if ($res)
-                	$test = count($res);
-                	else
-                	$test = 0;
-                	
-                if ($test > $highest) {
-                    $highest = $test;
-                    $playerOfHighest = $player;
-                }
-            }
-            
-            return $playerOfHighest;
-        }
-        
-        public function getMostKilledByPVP($serverObj) {
-            $highest = 0;
-            $playerOfHighest = null;
-            
-            foreach ($serverObj->getAllPlayers() as $player) {
-            	$res = $this->getPlayerDeathPVP($player->getUUID());
-            	
-            	if ($res)
-                	$test = count($res);
-                	else
-                	$test = 0;
-                	
-                if ($test > $highest) {
-                    $highest = $test;
-                    $playerOfHighest = $player;
-                }
-            }
-            
-            return $playerOfHighest;
+        public function getMostKilledByPVP() {
+            $row = mysql_fetch_assoc(mysql_query('SELECT `killed_by_uuid` name, COUNT(`killed_by_uuid`) count
+                                                    FROM kills
+                                                    WHERE `killed_uuid` = "'. $this->_playerUUID .'"
+                                                    	AND `killed_by_uuid` IS NOT NULL
+                                                    	AND `killed_by_uuid` != " "
+                                                    GROUP BY `killed_by_uuid`
+                                                    ORDER BY count DESC'));
+            return $row;
         }
         
         public function getPlayerKillTablePVP($limit = false, $limitStart = 0, $limitNumber = 0) {

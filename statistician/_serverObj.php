@@ -131,19 +131,19 @@
         
         public function getBlocksMostDestroyed() {
             $row = mysql_fetch_assoc(mysql_query('SELECT block_id, 
-            										SUM(num_destroyed) AS sum 
-            										FROM blocks GROUP BY block_id 
-            										ORDER BY sum DESC 
-            										LIMIT 0,1'));
+                                                    SUM(num_destroyed) AS sum 
+                                                    FROM blocks GROUP BY block_id 
+                                                    ORDER BY sum DESC 
+                                                    LIMIT 0,1'));
             return $row['block_id'];
         }
         
         public function getBlocksMostPlaced() {
             $row = mysql_fetch_assoc(mysql_query('SELECT block_id,
-            										SUM(num_placed) AS sum 
-            										FROM blocks GROUP BY block_id 
-            										ORDER BY sum DESC 
-            										LIMIT 0,1'));
+                                                    SUM(num_placed) AS sum 
+                                                    FROM blocks GROUP BY block_id 
+                                                    ORDER BY sum DESC 
+                                                    LIMIT 0,1'));
             return $row['block_id'];
         }
 		

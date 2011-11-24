@@ -44,15 +44,29 @@ $_player = $serverObj->getPlayer($_GET['uuid']);
     <span id="infoLabel"><?php echo(STRING_ALL_TOTAL_BLOCKS_PLACED); ?>:</span><span id="info"><?php echo($_player->getBlocksPlacedTotal()); ?> <?php echo(STRING_ALL_BLOCKS); ?></span>
 </div>
 <div id="infoLine">
-    <span id="infoLabel"><?php echo(STRING_ALL_MOST_POPULAR_BLOCK_PLACED); ?>:</span><span id="info"><?php echo(QueryUtils::getResourceNameById($_player->getBlocksMostPlaced())); ?>
-     - (<?php echo($_player->getBlocksPlacedOfType($_player->getBlocksMostPlaced())); ?> <?php echo(STRING_ALL_TIMES); ?>)</span>
+    <span id="infoLabel"><?php echo(STRING_ALL_MOST_POPULAR_BLOCK_PLACED); ?>:</span><span id="info">
+    <?php
+        $block = $_player->getBlocksMostPlaced();
+        echo QueryUtils::getResourceNameById($block['block_id']); 
+        echo ' - (';
+        echo $block['sum'];
+        echo(STRING_ALL_TIMES); 
+        echo ')';
+    ?></span>
 </div>
 <div id="infoLine">
     <span id="infoLabel"><?php echo(STRING_ALL_TOTAL_BLOCKS_DESTROYED); ?>:</span><span id="info"><?php echo($_player->getBlocksDestroyedTotal()); ?> <?php echo(STRING_ALL_BLOCKS); ?></span>
 </div>
 <div id="infoLine">
-    <span id="infoLabel"><?php echo(STRING_ALL_MOST_POPULAR_BLOCK_DESTROYED); ?>:</span><span id="info"><?php echo(QueryUtils::getResourceNameById($_player->getBlocksMostDestroyed())); ?>
-     - (<?php echo($_player->getBlocksDestroyedOfType($_player->getBlocksMostDestroyed())); ?> <?php echo(STRING_ALL_TIMES); ?>)</span>
+    <span id="infoLabel"><?php echo(STRING_ALL_MOST_POPULAR_BLOCK_DESTROYED); ?>:</span><span id="info">
+    <?php
+        $block = $_player->getBlocksMostDestroyed();
+        echo(QueryUtils::getResourceNameById($block['block_id']));
+        echo ' - (';
+        echo $block['sum'];
+        echo(STRING_ALL_TIMES);
+        echo ')'; 
+    ?></span>
 </div>
 <div id="subCategory"><?php echo(STRING_ALL_ITEMS); ?> &nbsp; &nbsp; <a href="?view=playerItems&uuid=<?php echo($_player->getUUID()); ?>" id="smallLink"><?php echo(STRING_PLAYER_LINK_ITEMS_LIST); ?></a></div>
 <div id="infoLine">
@@ -78,8 +92,15 @@ $_player = $serverObj->getPlayer($_GET['uuid']);
 </div>
 <br />
 <div id="infoLine">
-    <span id="infoLabel"><?php echo(STRING_PLAYER_MOST_DANGEROUS_WEAPON); ?>:</span><span id="info"><?php echo(QueryUtils::getResourceNameById($_player->getMostDangerousWeapon())); ?>
-    - (<?php echo ($_player->getPlayerKillTableUsing($_player->getMostDangerousWeapon()) ? count($_player->getPlayerKillTableUsing($_player->getMostDangerousWeapon())) : 0); ?> <?php echo(STRING_ALL_KILLS); ?>)</span>
+    <span id="infoLabel"><?php echo(STRING_PLAYER_MOST_DANGEROUS_WEAPON); ?>:</span><span id="info">
+        <?php 
+        $weapon = $_player->getMostDangerousWeapon();
+        echo(QueryUtils::getResourceNameById($weapon['name'])); 
+        echo ' - (';
+        echo $weapon['count']; 
+        echo(STRING_ALL_KILLS);
+        echo ')'; 
+        ?></span>
 </div>
 <br />
 <div id="infoLine">
@@ -89,32 +110,35 @@ $_player = $serverObj->getPlayer($_GET['uuid']);
     <span id="infoLabel"><?php echo(STRING_PLAYER_PVP_DEATHS); ?>:</span><span id="info"><?php echo($_player->getPlayerDeathTablePVP() ? count ($_player->getPlayerDeathTablePVP()) : 0); ?></span>
 </div>
 <div id="infoLine">
-    <span id="infoLabel"><?php echo(STRING_PLAYER_MOST_KILLED_PLAYER); ?>:</span><span id="info"><?php
-    $player = $_player->getMostKilledPVP($serverObj);
-    if ($player) {
-    	?>
-    	<a id="onlinePlayer" href="?view=player&uuid=<?php echo($player->getUUID()); ?>"><?php echo($player->getName()); ?></a> - (<?php echo (count($player->getPlayerDeathPVP($_player->getUUID()))); ?> <?php echo(STRING_ALL_KILLS); ?>)
-    	<?php
-    } else {
-    	?>
-    	<?php echo(STRING_ALL_NONE); ?>
-    	<?php
-    }
+    <span id="infoLabel"><?php echo(STRING_PLAYER_MOST_KILLED_PLAYER); ?>:</span><span id="info">    <?php
+        $ar = $_player->getMostKilledPVP();
+        $player = $serverObj->getPlayer($ar['name']);
+        if ($player) {
+        	?>
+        	<a id="onlinePlayer" href="?view=player&uuid=<?php echo($player->getUUID()); ?>"><?php echo($player->getName()); ?></a> 
+        	- (
+        	    <?php 
+        	        echo $ar['count']; 
+        	        echo(STRING_ALL_PVP_DEATHS); 
+        	    ?>
+        	  )
+    	<?php } else echo(STRING_ALL_NONE); 
     ?></span>
 </div>
 <div id="infoLine">
-    <span id="infoLabel"><?php echo(STRING_PLAYER_SWORN_ENEMY); ?>:</span><span id="info"><?php
-    $player = $_player->getMostKilledByPVP($serverObj);
-    if ($player) {
-    	?>
-    	<a id="onlinePlayer" href="?view=player&uuid=<?php echo($player->getUUID()); ?>"><?php echo($player->getName()); ?></a> - (<?php echo (count($player->getPlayerKillPVP($_player->getUUID()))); ?> <?php echo(STRING_PLAYER_DEATHS_BY); ?>)
-    	<?php
-    } else {
-    	?>
-    	None
-    	<?php
-    }
-    ?></span>
+    <span id="infoLabel"><?php echo(STRING_PLAYER_SWORN_ENEMY); ?>:</span><span id="info">        <?php
+            $ar = $_player->getMostKilledByPVP();
+            $player = $serverObj->getPlayer($ar['name']);
+            if ($player) {
+            	?>
+            	<a id="onlinePlayer" href="?view=player&uuid=<?php echo($player->getUUID()); ?>"><?php echo($player->getName()); ?></a> 
+            	- (
+            	    <?php 
+            	        echo $ar['count'];
+            	        echo(STRING_ALL_PVP_KILLS); 
+            	    ?>
+            	   )
+            	<?php } else echo(STRING_ALL_NONE); ?></span>
 </div>
 <br />
 <div id="infoLine">

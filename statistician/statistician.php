@@ -2,14 +2,6 @@
 	/* I beg you, please leave this area, touching anything here will just lead to you complaining on the forums */
 	/* unless you know what you're doing, then, by all means, be my guest, touch away. ~ ChaseHQ */
 
-	require_once('config.php');
-        require_once ('locale/' . LOCALE . '.php');
-	require_once('_serverObj.php');
-	require_once('_playerObj.php');
-	require_once('query_utils.php');
-	require_once('paginator.php');
-        require_once ('version.php');
-
 	class STATISTICIAN {
 	
 		private $sql_connection;

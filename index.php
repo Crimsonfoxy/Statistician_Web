@@ -1,6 +1,15 @@
-<?php
-$start = microtime(true);
+<?php    
+require_once('statistician/config.php');
+require_once ('statistician/locale/' . LOCALE . '.php');
+require_once('statistician/_serverObj.php');
+require_once('statistician/_playerObj.php');
+require_once('statistician/query_utils.php');
+require_once('statistician/paginator.php');
+require_once ('statistician/version.php');
 require_once ('statistician/statistician.php');
+
+$start = microtime(true);
+
 
 $sObj = new STATISTICIAN();
 $serverObj = $sObj->getServer();
