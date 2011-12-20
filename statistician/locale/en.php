@@ -70,7 +70,7 @@ define ('STRING_ALL_DEATHS','Deaths');
 define ('STRING_ALL_OTHER_TYPE_DEATHS', 'Other Type Deaths');
 define ('STRING_ALL_FALLING_DEATHS', 'Falling Deaths');
 define ('STRING_ALL_DROWNING_DEATHS','Drowning Deaths');
-define ('STRING_ALL_LIGHTENING_DEATHS','Ligtening Deaths');
+define ('STRING_ALL_LIGHTENING_DEATHS','Lightning Deaths');
 define ('STRING_ALL_LAVA_DEATHS', 'Lava Deaths');
 define ('STRING_ALL_FIRE_DEATHS', 'Fire Deaths');
 define ('STRING_ALL_SUFFOCATING_DEATHS', 'Suffocation Deaths');

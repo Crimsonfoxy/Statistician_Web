@@ -98,7 +98,7 @@
 		
 		public function getBlocksMostDestroyed() {
                     $row = mysql_fetch_assoc(mysql_query('SELECT block_id, 
-                                                            SUM(num_placed) AS sum 
+                                                            SUM(num_destroyed) AS sum 
                                                             FROM blocks 
                                                             WHERE uuid = "'. $this->_playerUUID .'"
                                                             GROUP BY block_id                                                            
@@ -110,7 +110,7 @@
                 public function getBlocksMostPlaced() {
 
                     $row = mysql_fetch_assoc(mysql_query('SELECT block_id, 
-                                                            SUM(num_destroyed) AS sum 
+                                                            SUM(num_placed) AS sum 
                                                             FROM blocks 
                                                             WHERE uuid = "'. $this->_playerUUID .'"
                                                             GROUP BY block_id                                                            
