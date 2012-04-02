@@ -5,136 +5,136 @@ define ('TRANSLATOR_NAME','RomKaz'); // Enter your name here (of translator)
 define ('TRANSLATOR_CONTACT','kazancew.roman@gmail.com'); // Enter an e-mail address here if you want it linked
 
 // Distance
-define ('STRING_DISTANCE_METERS', 'ìåòðîâ');
-define ('STRING_DISTANCE_KILOMETERS', 'êèëîìåòðîâ');
-define ('STRING_DISTANCE_MEGAMETERS', 'ìåãàìåòðîâ');
+define ('STRING_DISTANCE_METERS', 'Ð¼ÐµÑ‚Ñ€Ð¾Ð²');
+define ('STRING_DISTANCE_KILOMETERS', 'ÐºÐ¸Ð»Ð¾Ð¼ÐµÑ‚Ñ€Ð¾Ð²');
+define ('STRING_DISTANCE_MEGAMETERS', 'Ð¼ÐµÐ³Ð°Ð¼ÐµÑ‚Ñ€Ð¾Ð²');
 
 // Time
-define ('STRING_TIME_YEARS_ABV', 'ëåò');
-define ('STRING_TIME_DAYS_ABV', 'äíåé');
-define ('STRING_TIME_HOURS_ABV', '÷àñîâ');
-define ('STRING_TIME_MINUTES_ABV', 'ìèíóò');
-define ('STRING_TIME_SECONDS_ABV', 'ñåêóíä');
+define ('STRING_TIME_YEARS_ABV', 'Ð»ÐµÑ‚');
+define ('STRING_TIME_DAYS_ABV', 'Ð´Ð½ÐµÐ¹');
+define ('STRING_TIME_HOURS_ABV', 'Ñ‡Ð°ÑÐ¾Ð²');
+define ('STRING_TIME_MINUTES_ABV', 'Ð¼Ð¸Ð½ÑƒÑ‚');
+define ('STRING_TIME_SECONDS_ABV', 'ÑÐµÐºÑƒÐ½Ð´');
 
 // Misc
-define ('STRING_MISC_RUNNING_DATABASE_VERSION','Çàïóùåíî íà áàçåäàííûõ âåðñèè');
-define ('STRING_MISC_PORTAL_VERSION','Âåðñèÿ ïîðòàëà');
-define ('STRING_MISC_TRANSLATED_TO_BY', 'Ïåðåâåäåíî íà ðóññêèé');
+define ('STRING_MISC_RUNNING_DATABASE_VERSION','Ð—Ð°Ð¿ÑƒÑ‰ÐµÐ½Ð¾ Ð½Ð° Ð±Ð°Ð·Ðµ Ð´Ð°Ð½Ð½Ñ‹Ñ… Ð²ÐµÑ€ÑÐ¸Ð¸');
+define ('STRING_MISC_PORTAL_VERSION','Ð’ÐµÑ€ÑÐ¸Ñ Ð¿Ð¾Ñ€Ñ‚Ð°Ð»Ð°');
+define ('STRING_MISC_TRANSLATED_TO_BY', 'ÐŸÐµÑ€ÐµÐ²ÐµÐ´ÐµÐ½Ð¾ Ð½Ð° Ñ€ÑƒÑÑÐºÐ¸Ð¹');
 
 // All Pages
-define ('STRING_ALL_YES', 'Äà');
-define ('STRING_ALL_NO', 'Íåò');
-define ('STRING_ALL_NAME', 'Èìÿ');
-define ('STRING_ALL_BLOCK_TYPE','Òèï áëîêà');
-define ('STRING_ALL_DESTROYED', 'Ðàçðóøåíî');
-define ('STRING_ALL_PLACED', 'Ïîñòàâëåíî');
-define ('STRING_ALL_PICKEDUP','Ïîäíÿòî');
-define ('STRING_ALL_DROPPED','Áðîøåíî');
-define ('STRING_ALL_NEXT','ñëåäóþùèé');
-define ('STRING_ALL_PREVIOUS','ïðåäûäóùèé');
-define ('STRING_ALL_KILLER','Óáèéöà');
-define ('STRING_ALL_WEAPON','Îðóæèå');
-define ('STRING_ALL_VICTIM','Æåðòâà');
-define ('STRING_ALL_KILLTIME','Âðåìÿ óáèéñòâà');
-define ('STRING_ALL_REASON','Ïðè÷èíà');
-define ('STRING_ALL_TIMES','Ðàç');
-define ('STRING_ALL_NONE', 'íå ðàçó');
+define ('STRING_ALL_YES', 'Ð”Ð°');
+define ('STRING_ALL_NO', 'ÐÐµÑ‚');
+define ('STRING_ALL_NAME', 'Ð˜Ð¼Ñ');
+define ('STRING_ALL_BLOCK_TYPE','Ð¢Ð¸Ð¿ Ð±Ð»Ð¾ÐºÐ°');
+define ('STRING_ALL_DESTROYED', 'Ð Ð°Ð·Ñ€ÑƒÑˆÐµÐ½Ð¾');
+define ('STRING_ALL_PLACED', 'ÐŸÐ¾ÑÑ‚Ð°Ð²Ð»ÐµÐ½Ð¾');
+define ('STRING_ALL_PICKEDUP','ÐŸÐ¾Ð´Ð½ÑÑ‚Ð¾');
+define ('STRING_ALL_DROPPED','Ð‘Ñ€Ð¾ÑˆÐµÐ½Ð¾');
+define ('STRING_ALL_NEXT','ÑÐ»ÐµÐ´ÑƒÑŽÑ‰Ð¸Ð¹');
+define ('STRING_ALL_PREVIOUS','Ð¿Ñ€ÐµÐ´Ñ‹Ð´ÑƒÑ‰Ð¸Ð¹');
+define ('STRING_ALL_KILLER','Ð£Ð±Ð¸Ð¹Ñ†Ð°');
+define ('STRING_ALL_WEAPON','ÐžÑ€ÑƒÐ¶Ð¸Ðµ');
+define ('STRING_ALL_VICTIM','Ð–ÐµÑ€Ñ‚Ð²Ð°');
+define ('STRING_ALL_KILLTIME','Ð’Ñ€ÐµÐ¼Ñ ÑƒÐ±Ð¸Ð¹ÑÑ‚Ð²Ð°');
+define ('STRING_ALL_REASON','ÐŸÑ€Ð¸Ñ‡Ð¸Ð½Ð°');
+define ('STRING_ALL_TIMES','Ð Ð°Ð·');
+define ('STRING_ALL_NONE', 'Ð½Ð¸ Ñ€Ð°Ð·Ñƒ');
 
-define ('STRING_ALL_DISTANCES','Ðàññòîÿíèÿ');
-define ('STRING_ALL_TOTAL_TRAVEL_DISTANCE', 'Âñåãî ïðîéäåíî');
-define ('STRING_ALL_TOTAL_FOOT_TRAVEL_DISTANCE','Âñåãî ïðîéäåíî íîãàìè');
-define ('STRING_ALL_TOTAL_MINECART_TRAVEL_DISTANCE','Âñåãî ïðîéäåíî â MineCraft');
-define ('STRING_ALL_TOTAL_BOAT_TRAVEL_DISTANCE','Âñåãî ïðîéäåíî íà ëîäêå');
-define ('STRING_ALL_TOTAL_PIG_TRAVEL_DISTANCE','Âñåãî ïðîåõàíî íà ñâèíüå :)');
+define ('STRING_ALL_DISTANCES','Ð Ð°ÑÑÑ‚Ð¾ÑÐ½Ð¸Ñ');
+define ('STRING_ALL_TOTAL_TRAVEL_DISTANCE', 'Ð’ÑÐµÐ³Ð¾ Ð¿Ñ€Ð¾Ð¹Ð´ÐµÐ½Ð¾');
+define ('STRING_ALL_TOTAL_FOOT_TRAVEL_DISTANCE','Ð’ÑÐµÐ³Ð¾ Ð¿Ñ€Ð¾Ð¹Ð´ÐµÐ½Ð¾ Ð¿ÐµÑˆÐºÐ¾Ð¼');
+define ('STRING_ALL_TOTAL_MINECART_TRAVEL_DISTANCE','Ð’ÑÐµÐ³Ð¾ Ð¿Ñ€Ð¾Ð¹Ð´ÐµÐ½Ð¾ Ð² MineCraft');
+define ('STRING_ALL_TOTAL_BOAT_TRAVEL_DISTANCE','Ð’ÑÐµÐ³Ð¾ Ð¿Ñ€Ð¾Ð¹Ð´ÐµÐ½Ð¾ Ð½Ð° Ð»Ð¾Ð´ÐºÐµ');
+define ('STRING_ALL_TOTAL_PIG_TRAVEL_DISTANCE','Ð’ÑÐµÐ³Ð¾ Ð¿Ñ€Ð¾ÐµÑ…Ð°Ð½Ð¾ Ð½Ð° ÑÐ²Ð¸Ð½ÑŒÐµ :)');
 
-define ('STRING_ALL_BLOCKS','Áëîêè');
-define ('STRING_ALL_TOTAL_BLOCKS_PLACED','Âñåãî ïîñòàâëåíî áëîêîâ');
-define ('STRING_ALL_TOTAL_BLOCKS_DESTROYED','Âñåãî ðàçðóøåíî áëîêîâ');
-define ('STRING_ALL_MOST_POPULAR_BLOCK_PLACED','Íàèáîëåå ïîïóëÿðíûé, ðàçìåù¸ííûé áëîê');
-define ('STRING_ALL_MOST_POPULAR_BLOCK_DESTROYED','Íàèáîëåå ïîïóëÿðíûé ðàçðóøàåìûé áëîê');
+define ('STRING_ALL_BLOCKS','Ð‘Ð»Ð¾ÐºÐ¸');
+define ('STRING_ALL_TOTAL_BLOCKS_PLACED','Ð’ÑÐµÐ³Ð¾ Ð¿Ð¾ÑÑ‚Ð°Ð²Ð»ÐµÐ½Ð¾ Ð±Ð»Ð¾ÐºÐ¾Ð²');
+define ('STRING_ALL_TOTAL_BLOCKS_DESTROYED','Ð’ÑÐµÐ³Ð¾ Ñ€Ð°Ð·Ñ€ÑƒÑˆÐµÐ½Ð¾ Ð±Ð»Ð¾ÐºÐ¾Ð²');
+define ('STRING_ALL_MOST_POPULAR_BLOCK_PLACED','Ð§Ð°ÑÑ‚Ð¾ Ñ€Ð°Ð·Ð¼ÐµÑ‰Ð°ÐµÐ¼Ñ‹Ð¹ Ð±Ð»Ð¾Ðº');
+define ('STRING_ALL_MOST_POPULAR_BLOCK_DESTROYED','Ð§Ð°ÑÑ‚Ð¾ Ñ€Ð°Ð·Ñ€ÑƒÑˆÐ°ÐµÐ¼Ñ‹Ð¹ Ð±Ð»Ð¾Ðº');
 
-define ('STRING_ALL_ITEMS','Ïðåäìåòû');
-define ('STRING_ALL_TOTAL_ITEMS_PICKEDUP','Âñåãî ïîäíÿòî ïðåäìåòîâ');
-define ('STRING_ALL_TOTAL_ITEMS_DROPPED','Âñåãî áðîøåíî ïðåäìåòîâ');
-define ('STRING_ALL_MOST_POPULAR_ITEM_PICKEDUP','Íàèáîëåå ïîïóëÿðíûé, ïîäáèðàåìûé ïðåäìåò');
-define ('STRING_ALL_MOST_POPULAR_ITEM_DROPPED','Íàèáîëåå ïîïóëÿðíûé, áðîñàåìûé ïðåäìåò');
+define ('STRING_ALL_ITEMS','ÐŸÑ€ÐµÐ´Ð¼ÐµÑ‚Ñ‹');
+define ('STRING_ALL_TOTAL_ITEMS_PICKEDUP','Ð’ÑÐµÐ³Ð¾ Ð¿Ð¾Ð´Ð½ÑÑ‚Ð¾ Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð¾Ð²');
+define ('STRING_ALL_TOTAL_ITEMS_DROPPED','Ð’ÑÐµÐ³Ð¾ Ð±Ñ€Ð¾ÑˆÐµÐ½Ð¾ Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð¾Ð²');
+define ('STRING_ALL_MOST_POPULAR_ITEM_PICKEDUP','Ð§Ð°ÑÑ‚Ð¾ Ð¿Ð¾Ð´Ð±Ð¸Ñ€Ð°ÐµÐ¼Ñ‹Ð¹ Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚');
+define ('STRING_ALL_MOST_POPULAR_ITEM_DROPPED','Ð§Ð°ÑÑ‚Ð¾ Ð±Ñ€Ð¾ÑÐ°ÐµÐ¼Ñ‹Ð¹ Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚');
 
-define ('STRING_ALL_KILLS','Óáèéñòâà');
-define ('STRING_ALL_TOTAL_DEATHS', 'Âñåãî ñìåðòåé');
-define ('STRING_ALL_PVP_KILLS', 'ÏÂÏ óáèéñòâ');
-define ('STRING_ALL_PVP_DEATHS', 'ÏÂÏ ñìåðòåé');
-define ('STRING_ALL_PVE_KILLS', 'ÏÂÅ óáèéñòâ');
-define ('STRING_ALL_OTHER_DEATHS', 'Äðóãèå ñìåðòè');
+define ('STRING_ALL_KILLS','Ð£Ð±Ð¸Ð¹ÑÑ‚Ð²Ð°');
+define ('STRING_ALL_TOTAL_DEATHS', 'Ð’ÑÐµÐ³Ð¾ ÑÐ¼ÐµÑ€Ñ‚ÐµÐ¹');
+define ('STRING_ALL_PVP_KILLS', 'ÐŸÐ’ÐŸ ÑƒÐ±Ð¸Ð¹ÑÑ‚Ð²');
+define ('STRING_ALL_PVP_DEATHS', 'ÐŸÐ’ÐŸ ÑÐ¼ÐµÑ€Ñ‚ÐµÐ¹');
+define ('STRING_ALL_PVE_KILLS', 'ÐŸÐ’Ð• ÑƒÐ±Ð¸Ð¹ÑÑ‚Ð²');
+define ('STRING_ALL_OTHER_DEATHS', 'Ð”Ñ€ÑƒÐ³Ð¸Ðµ ÑÐ¼ÐµÑ€Ñ‚Ð¸');
 
-define ('STRING_ALL_DEATHS','Ñìåðèòè');
-define ('STRING_ALL_OTHER_TYPE_DEATHS', 'Óìåðëè íå êàê âñå :)');
-define ('STRING_ALL_FALLING_DEATHS', 'Ñìåðòåé ïðè ïàäåíèè');
-define ('STRING_ALL_DROWNING_DEATHS','Óòîíóâøèõ');
-define ('STRING_ALL_LIGHTENING_DEATHS','Óáèòûõ ìîëíèåé');
-define ('STRING_ALL_LAVA_DEATHS', 'Ñãîðåëè â ëàâå');
-define ('STRING_ALL_FIRE_DEATHS', 'Ïðîñòî ñãîðåëè');
-define ('STRING_ALL_SUFFOCATING_DEATHS', 'Çàäîõíóëèñü');
-define ('STRING_ALL_FIRE_TICK_DEATHS', 'Ïîãèáëè â ïîæàðå');
-define ('STRING_ALL_EXPLOSION_DEATHS', 'Ïîäîðâàëèñü íà ÒÍÒ');
+define ('STRING_ALL_DEATHS','Ð¡Ð¼ÐµÑ€Ñ‚Ð¸');
+define ('STRING_ALL_OTHER_TYPE_DEATHS', 'Ð£Ð¼ÐµÑ€Ð»Ð¸ Ð½Ðµ ÐºÐ°Ðº Ð²ÑÐµ :)');
+define ('STRING_ALL_FALLING_DEATHS', 'Ð¡Ð¼ÐµÑ€Ñ‚ÐµÐ¹ Ð¿Ñ€Ð¸ Ð¿Ð°Ð´ÐµÐ½Ð¸Ð¸');
+define ('STRING_ALL_DROWNING_DEATHS','Ð£Ñ‚Ð¾Ð½ÑƒÐ²ÑˆÐ¸Ñ…');
+define ('STRING_ALL_LIGHTENING_DEATHS','Ð£Ð±Ð¸Ñ‚Ñ‹Ñ… Ð¼Ð¾Ð»Ð½Ð¸ÐµÐ¹');
+define ('STRING_ALL_LAVA_DEATHS', 'Ð¡Ð³Ð¾Ñ€ÐµÐ»Ð¸ Ð² Ð»Ð°Ð²Ðµ');
+define ('STRING_ALL_FIRE_DEATHS', 'ÐŸÑ€Ð¾ÑÑ‚Ð¾ ÑÐ³Ð¾Ñ€ÐµÐ»Ð¸');
+define ('STRING_ALL_SUFFOCATING_DEATHS', 'Ð—Ð°Ð´Ð¾Ñ…Ð½ÑƒÐ»Ð¸ÑÑŒ');
+define ('STRING_ALL_FIRE_TICK_DEATHS', 'ÐŸÐ¾Ð³Ð¸Ð±Ð»Ð¸ Ð² Ð¿Ð¾Ð¶Ð°Ñ€Ðµ');
+define ('STRING_ALL_EXPLOSION_DEATHS', 'ÐŸÐ¾Ð´Ð¾Ñ€Ð²Ð°Ð»Ð¸ÑÑŒ Ð½Ð° Ð¢ÐÐ¢');
 
 // Unique to Server page
-define ('STRING_SERVER_CURRENTLY_ONLINE', 'Ñåé÷àñ â èãðå');
+define ('STRING_SERVER_CURRENTLY_ONLINE', 'Ð¡ÐµÐ¹Ñ‡Ð°Ñ Ð² Ð¸Ð³Ñ€Ðµ');
 
-define ('STRING_SERVER_SERVER_STATISTICS', 'Ñòàòèñòèêà ñåðâåðà');
-define ('STRING_SERVER_LINK_PLAYER_LIST', '(Ñïèñîê èãðîêîâ)');
+define ('STRING_SERVER_SERVER_STATISTICS', 'Ð¡Ñ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ° ÑÐµÑ€Ð²ÐµÑ€Ð°');
+define ('STRING_SERVER_LINK_PLAYER_LIST', '(Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð²)');
 
-define ('STRING_SERVER_REGISTERED_PLAYERS', 'Çàðåãèñòðèðîâàííûå èãðîêè');
-define ('STRING_SERVER_MAX_PLAYERS_ON', 'Ìàêñèìàëüíîå êîëè÷åñòâî èãðîêîâ îíëàéí áûëî');
+define ('STRING_SERVER_REGISTERED_PLAYERS', 'Ð—Ð°Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ðµ Ð¸Ð³Ñ€Ð¾ÐºÐ¸');
+define ('STRING_SERVER_MAX_PLAYERS_ON', 'ÐœÐ°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ð¸Ð³Ñ€Ð¾ÐºÐ¾Ð² Ð¾Ð½Ð»Ð°Ð¹Ð½ Ð±Ñ‹Ð»Ð¾');
 define ('STRING_SERVER_MAX_PLAYERS_NUMBER_TO_TIME_SEPERATOR', '- on -');
-define ('STRING_SERVER_LIFETIME_LOGONS','Âñåãî çàõîäèëî');
-define ('STRING_SERVER_TIME_PLAYED_TOTAL','Âñåãî âðåìåíè îòûãðàíî');
-define ('STRING_SERVER_SERVER_CURRENT_UPTIME', 'Ñåðâåð óæå ðàáîàòåò');
-define ('STRING_SERVER_SERVER_LAST_STARTUP', 'Êðàéíèé çàïóñê ñåðâåðà');
-define ('STRING_SERVER_SERVER_LAST_SHUTDOWN', 'Êðàéíÿÿ îñòàíîâêà ñåðâåðà');
+define ('STRING_SERVER_LIFETIME_LOGONS','Ð’ÑÐµÐ³Ð¾ Ð·Ð°Ñ…Ð¾Ð´Ð¸Ð»Ð¾');
+define ('STRING_SERVER_TIME_PLAYED_TOTAL','Ð’ÑÐµÐ³Ð¾ Ð²Ñ€ÐµÐ¼ÐµÐ½Ð¸ Ð¾Ñ‚Ñ‹Ð³Ñ€Ð°Ð½Ð¾');
+define ('STRING_SERVER_SERVER_CURRENT_UPTIME', 'Ð¡ÐµÑ€Ð²ÐµÑ€ ÑƒÐ¶Ðµ Ñ€Ð°Ð±Ð¾Ñ‚Ð°ÐµÑ‚');
+define ('STRING_SERVER_SERVER_LAST_STARTUP', 'ÐŸÐ¾ÑÐ»ÐµÐ´Ð½Ð¸Ð¹ Ð·Ð°Ð¿ÑƒÑÐº ÑÐµÑ€Ð²ÐµÑ€Ð°');
+define ('STRING_SERVER_SERVER_LAST_SHUTDOWN', 'ÐŸÐ¾ÑÐ»ÐµÐ´Ð½ÑÑ Ð¾ÑÑ‚Ð°Ð½Ð¾Ð²ÐºÐ° ÑÐµÑ€Ð²ÐµÑ€Ð°');
 
-define ('STRING_SERVER_LINK_GLOBAL_BLOCK_LIST', '(Äåòàëüíûé ïðîñìîòð ñòàòèñòèêè áëîêîâ)');
+define ('STRING_SERVER_LINK_GLOBAL_BLOCK_LIST', '(ÐŸÐ¾Ð´Ñ€Ð¾Ð±Ð½Ð°Ñ ÑÑ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ° Ð±Ð»Ð¾ÐºÐ¾Ð²)');
 
-define ('STRING_SERVER_LINK_GLOBAL_ITEMS_LIST', '(Äåòàëüíûé ïðîñìîòð ñòàòèñòèêè ïðåäìåòîâ)');
+define ('STRING_SERVER_LINK_GLOBAL_ITEMS_LIST', '(ÐŸÐ¾Ð´Ñ€Ð¾Ð±Ð½Ð°Ñ ÑÑ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ° Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð¾Ð²)');
 
-define ('STRING_SERVER_LINK_GLOBAL_KILL_LIST', '(Äåòàëüíûé ïðîñìîòð ñòàòèñòèêè óáèéñòâ)');
-define ('STRING_SERVER_MOST_DANGEROUS_WEAPON' , 'Ñàìîå îïàñíîå îðóæèå');
-define ('STRING_SERVER_MOST_DANGEROUS_PLAYER' , 'Ñàìûé îïàñíûé èãðîê');
-define ('STRING_SERVER_MOST_SQUISHY_PLAYER', 'Ñàìûé ïðîñòîé èãðîê');
-define ('STRING_SERVER_MOST_DANGEROUS_CREATURE', 'Ñàìîå îïàñíîå ñîçäàíèå');
-define ('STRING_SERVER_MOST_KILLED_CREATURE', 'Ñàìîå óáèâàåìîå ñîçäàíèå');
+define ('STRING_SERVER_LINK_GLOBAL_KILL_LIST', '(ÐŸÐ¾Ð´Ñ€Ð¾Ð±Ð½Ð°Ñ ÑÑ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ° ÑƒÐ±Ð¸Ð¹ÑÑ‚Ð²)');
+define ('STRING_SERVER_MOST_DANGEROUS_WEAPON' , 'Ð¡Ð°Ð¼Ð¾Ðµ Ð¾Ð¿Ð°ÑÐ½Ð¾Ðµ Ð¾Ñ€ÑƒÐ¶Ð¸Ðµ');
+define ('STRING_SERVER_MOST_DANGEROUS_PLAYER' , 'Ð¡Ð°Ð¼Ñ‹Ð¹ Ð¾Ð¿Ð°ÑÐ½Ñ‹Ð¹ Ð¸Ð³Ñ€Ð¾Ðº');
+define ('STRING_SERVER_MOST_SQUISHY_PLAYER', 'Ð¡Ð°Ð¼Ñ‹Ð¹ Ð¿Ñ€Ð¾ÑÑ‚Ð¾Ð¹ Ð¸Ð³Ñ€Ð¾Ðº');
+define ('STRING_SERVER_MOST_DANGEROUS_CREATURE', 'Ð¡Ð°Ð¼Ð¾Ðµ Ð¾Ð¿Ð°ÑÐ½Ð¾Ðµ ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ðµ');
+define ('STRING_SERVER_MOST_KILLED_CREATURE', 'Ð¡Ð°Ð¼Ð¾Ðµ ÑƒÐ±Ð¸Ð²Ð°ÐµÐ¼Ð¾Ðµ ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ðµ');
 
 // Unique to Player Page
-define ('STRING_PLAYER_STATISTICS','Ñòàòèñòèêà');
-define ('STRING_PLAYER_JOIN_DATE','Äàòà ñîçäàíèÿ');
-define ('STRING_PLAYER_LAST_LOGON','Êðàéíèé âõîä');
-define ('STRING_PLAYER_LIFETIME_LOGONS','Âñåãî âõîäîâ');
-define ('STRING_PLAYER_TIME_PLAYED_TOTAL','Âñåãî îòûãðàíî');
-define ('STRING_PLAYER_CURRENTLY_ONLINE','Ñåé÷àñ â èãðå?');
+define ('STRING_PLAYER_STATISTICS','Ð¡Ñ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ°');
+define ('STRING_PLAYER_JOIN_DATE','Ð”Ð°Ñ‚Ð° ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ñ');
+define ('STRING_PLAYER_LAST_LOGON','ÐšÑ€Ð°Ð¹Ð½Ð¸Ð¹ Ð²Ñ…Ð¾Ð´');
+define ('STRING_PLAYER_LIFETIME_LOGONS','Ð’ÑÐµÐ³Ð¾ Ð²Ñ…Ð¾Ð´Ð¾Ð²');
+define ('STRING_PLAYER_TIME_PLAYED_TOTAL','Ð’ÑÐµÐ³Ð¾ Ð¾Ñ‚Ñ‹Ð³Ñ€Ð°Ð½Ð¾');
+define ('STRING_PLAYER_CURRENTLY_ONLINE','Ð¡ÐµÐ¹Ñ‡Ð°Ñ Ð² Ð¸Ð³Ñ€Ðµ?');
 
-define ('STRING_PLAYER_TOTAL_KILLS', 'Âñåãî óáèéñòâ');
-define ('STRING_PLAYER_MOST_DANGEROUS_WEAPON' , 'Ñàìîå îïàñíîå îðóæèå');
-define ('STRING_PLAYER_PVP_DEATHS','ÏÂÏ ñìåðòåé');
-define ('STRING_PLAYER_PVE_DEATHS','ÏÂÅ ñìåðòåé');
-define ('STRING_PLAYER_MOST_KILLED_PLAYER', 'Áîëüøå âñåõ óáèòûé èãðîê');
-define ('STRING_PLAYER_SWORN_ENEMY', 'Çàêëÿòûé âðàã');
-define ('STRING_PLAYER_DEATHS_BY', 'Ñìåðòåé îò');
-define ('STRING_PLAYER_MOST_DANGEROUS_CREATURE', 'Ñàìîå îïàñíîå ñîçäàíèå');
-define ('STRING_PLAYER_MOST_KILLED_CREATURE', 'Ñàìîå óáèâàåìîå ñîçäàíèå');
+define ('STRING_PLAYER_TOTAL_KILLS', 'Ð’ÑÐµÐ³Ð¾ ÑƒÐ±Ð¸Ð¹ÑÑ‚Ð²');
+define ('STRING_PLAYER_MOST_DANGEROUS_WEAPON' , 'Ð¡Ð°Ð¼Ð¾Ðµ Ð¾Ð¿Ð°ÑÐ½Ð¾Ðµ Ð¾Ñ€ÑƒÐ¶Ð¸Ðµ');
+define ('STRING_PLAYER_PVP_DEATHS','ÐŸÐ’ÐŸ ÑÐ¼ÐµÑ€Ñ‚ÐµÐ¹');
+define ('STRING_PLAYER_PVE_DEATHS','ÐŸÐ’Ð• ÑÐ¼ÐµÑ€Ñ‚ÐµÐ¹');
+define ('STRING_PLAYER_MOST_KILLED_PLAYER', 'Ð‘Ð¾Ð»ÑŒÑˆÐµ Ð²ÑÐµÑ… ÑƒÐ±Ð¸Ñ‚Ñ‹Ð¹ Ð¸Ð³Ñ€Ð¾Ðº');
+define ('STRING_PLAYER_SWORN_ENEMY', 'Ð—Ð°ÐºÐ»ÑÑ‚Ñ‹Ð¹ Ð²Ñ€Ð°Ð³');
+define ('STRING_PLAYER_DEATHS_BY', 'Ð¡Ð¼ÐµÑ€Ñ‚ÐµÐ¹ Ð¾Ñ‚');
+define ('STRING_PLAYER_MOST_DANGEROUS_CREATURE', 'Ð¡Ð°Ð¼Ð¾Ðµ Ð¾Ð¿Ð°ÑÐ½Ð¾Ðµ ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ðµ');
+define ('STRING_PLAYER_MOST_KILLED_CREATURE', 'Ð¡Ð°Ð¼Ð¾Ðµ ÑƒÐ±Ð¸Ð²Ð°ÐµÐ¼Ð¾Ðµ ÑÐ¾Ð·Ð´Ð°Ð½Ð¸Ðµ');
 
-define ('STRING_PLAYER_LINK_BLOCK_LIST', '(Äåòàëüíûé ïðîñìîòð ñòàòèñòèêè áëîêîâ)');
-define ('STRING_PLAYER_LINK_ITEMS_LIST', '(Äåòàëüíûé ïðîñìîòð ñòàòèñòèêè ïðåäìåòîâ)');
-define ('STRING_PLAYER_LINK_KILL_DEATH_LIST', '(Äåòàëüíûé ïðîñìîòð ñòàòèñòèêè áëîêîâ óáèñòâ/ñìåðòåé)');
+define ('STRING_PLAYER_LINK_BLOCK_LIST', '(ÐŸÐ¾Ð´Ñ€Ð¾Ð±Ð½Ð°Ñ Ð¿Ñ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€ ÑÑ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ° Ð±Ð»Ð¾ÐºÐ¾Ð²)');
+define ('STRING_PLAYER_LINK_ITEMS_LIST', '(ÐŸÐ¾Ð´Ñ€Ð¾Ð±Ð½Ð°Ñ ÑÑ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ° Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð¾Ð²)');
+define ('STRING_PLAYER_LINK_KILL_DEATH_LIST', '(ÐŸÐ¾Ð´Ñ€Ð¾Ð±Ð½Ð°Ñ ÑÑ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ° Ð±Ð»Ð¾ÐºÐ¾Ð² ÑƒÐ±Ð¸ÑÑ‚Ð²/ÑÐ¼ÐµÑ€Ñ‚ÐµÐ¹)');
 
 // Server Wide List Headers
 
-define ('STRING_SERVER_GLOBAL_ALL_REGISTERED_PLAYERS', 'Âñå çàðåãèñòðèðîâàííûå èãðîêè');
-define ('STRING_SERVER_GLOBAL_BLOCK_STATISTICS', 'Ãëîáàëüíàÿ ñòàòèñòèêà áëîêîâ');
-define ('STRING_SERVER_GLOBAL_ITEM_STATISTICS', 'Ãëîáàëüíàÿ ñòàòèñòèêà ïðåäìåòîâ');
-define ('STRING_SERVER_GLOBAL_KILL_STATISTICS', 'Ãëîáàëüíàÿ ñòàòèñòèêà óáèéñòâ');
+define ('STRING_SERVER_GLOBAL_ALL_REGISTERED_PLAYERS', 'Ð’ÑÐµ Ð·Ð°Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð¸Ñ€Ð¾Ð²Ð°Ð½Ð½Ñ‹Ðµ Ð¸Ð³Ñ€Ð¾ÐºÐ¸');
+define ('STRING_SERVER_GLOBAL_BLOCK_STATISTICS', 'Ð“Ð»Ð¾Ð±Ð°Ð»ÑŒÐ½Ð°Ñ ÑÑ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ° Ð±Ð»Ð¾ÐºÐ¾Ð²');
+define ('STRING_SERVER_GLOBAL_ITEM_STATISTICS', 'Ð“Ð»Ð¾Ð±Ð°Ð»ÑŒÐ½Ð°Ñ ÑÑ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ° Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð¾Ð²');
+define ('STRING_SERVER_GLOBAL_KILL_STATISTICS', 'Ð“Ð»Ð¾Ð±Ð°Ð»ÑŒÐ½Ð°Ñ ÑÑ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ° ÑƒÐ±Ð¸Ð¹ÑÑ‚Ð²');
 
 // Player Wide List Headers
 
-define ('STRING_PLAYER_BLOCK_STATISTICS', 'Ñòàòèñòèêà áëîêîâ');
-define ('STRING_PLAYER_ITEM_STATISTICS', 'Ñòàòèñòèêà ïðåäìåòîâ');
+define ('STRING_PLAYER_BLOCK_STATISTICS', 'Ð¡Ñ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ° Ð±Ð»Ð¾ÐºÐ¾Ð²');
+define ('STRING_PLAYER_ITEM_STATISTICS', 'Ð¡Ñ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ° Ð¿Ñ€ÐµÐ´Ð¼ÐµÑ‚Ð¾Ð²');
 
 ?>

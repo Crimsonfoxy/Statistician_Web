@@ -3,5 +3,5 @@
  Later as an update notification  
  */
 
-define('VERSION', '2.02a');
+define('VERSION', '2.03');
 ?>

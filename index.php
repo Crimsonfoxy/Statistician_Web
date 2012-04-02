@@ -1,12 +1,14 @@
-<?php    
-require_once('statistician/config.php');
-require_once ('statistician/locale/' . LOCALE . '.php');
-require_once('statistician/_serverObj.php');
-require_once('statistician/_playerObj.php');
-require_once('statistician/query_utils.php');
-require_once('statistician/paginator.php');
-require_once ('statistician/version.php');
-require_once ('statistician/statistician.php');
+<?php
+define('__INC__', dirname(__FILE__) . '/');
+
+require_once (__INC__ . 'statistician/config.php');
+require_once (__INC__ . 'statistician/locale/' . LOCALE . '.php');
+require_once (__INC__ . 'statistician/_serverObj.php');
+require_once (__INC__ . 'statistician/_playerObj.php');
+require_once (__INC__ . 'statistician/query_utils.php');
+require_once (__INC__ . 'statistician/paginator.php');
+require_once (__INC__ . 'statistician/version.php');
+require_once (__INC__ . 'statistician/statistician.php');
 
 $start = microtime(true);
 
@@ -16,21 +18,20 @@ $serverObj = $sObj->getServer();
 
 ?>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
-
+<!DOCTYPE HTML>
 <head>
-  <title><?php echo (SERVER_NAME); ?> :: Statistician</title>
-  <link href="statistician.css" rel="stylesheet" type="text/css" />
-  <script type="text/javascript" src="jquery-1.5.min.js"></script>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</head>
-
-<script type="text/javascript">
+    <title><?php echo (SERVER_NAME); ?> :: Statistician</title>
+    <link href="statistician.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="jquery-1.5.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  
+    <script type="text/javascript">
 	$(window).load(function(){
 		/* Keep the template looking great :) */
 		$('#content').height($('#content').height() - 200);
 	});
-</script>
+    </script>
+</head>
 
 <body>
 	<div id="topLeadBar"><div id="titleMain"></div><div id="creeper"></div></div>
