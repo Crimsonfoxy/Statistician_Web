@@ -1,77 +1,53 @@
+<?php
+$pag = new Paginator();
+$pag->mid_range = 5;
+$pag->items_per_page = 30;
+?>
+
 <a name="playerList">
-	<div id="subTitle"><?php echo(STRING_SERVER_GLOBAL_ALL_REGISTERED_PLAYERS); echo ' ('.$serverObj->getAllPlayers().')'; ?></div>
+	<div id="subTitle">
+        <?php echo STRING_SERVER_GLOBAL_ALL_REGISTERED_PLAYERS; echo ' ('.$serverObj->getAllPlayers().')'; ?>
+    </div>
 </a>
 <table>
- <th></th><th><?php echo(STRING_ALL_NAME); ?></th><th><?php echo(STRING_PLAYER_LAST_LOGON); ?></th><th><?php echo(STRING_PLAYER_JOIN_DATE); ?></th>
+ <th></th>
+    <th><?php echo STRING_ALL_NAME; ?></th>
+    <th><?php echo STRING_PLAYER_LAST_LOGON; ?></th>
+    <th><?php echo STRING_PLAYER_JOIN_DATE; ?></th>
  <?php
- 	$thisTablePNGet = 'playersPN';
-	$thisTablePNAN = 'playerList';
-	
-	$tableFull = $serverObj->getPlayersTable();
-	
-	$pageNumber = 1;
-	if (isset($_GET[$thisTablePNGet])) {
-		$pageNumber = $_GET[$thisTablePNGet];
-	}
-	
-	$numPages = 1;
-	$numPages = count($tableFull) / 50;
-	
-	$rowNum = 50 * ($pageNumber - 1);
-	
-	$table = $serverObj->getPlayersTable(true,$rowNum,50);
-	
-	foreach ($table as $row) {
-		
-		$player = $serverObj->getPlayer($row['uuid']);
-		$rowNum++;
- ?>
- <tr>
- 	 <td><?php echo($rowNum); ?></td>
-	 <td><a href="?view=player&uuid=<?php echo($player->getUUID()); ?>"><?php echo($player->getName()); ?></a></td>
-	 <td><?php echo(QueryUtils::formatDate($player->getLastLogin())); ?></td>
-	 <td><?php echo(QueryUtils::formatDate($player->getFirstLogin())); ?></td>
- </tr>
- <?php
- }
+    $pag->items_total = $serverObj->getAllPlayers();
+    $pag->paginate();
+    $pagination = $pag->display_pages();
+
+    $i = $pag->low;
+
+    $query = $serverObj->getPlayers($pag->limit);
+
+    while($row = mysql_fetch_assoc($query)) {
+        $i++;
+
+        $player = new PLAYER($row['uuid']);
+
+        echo '<tr>';
+        echo '<td>';
+        echo $i;
+        echo '</td>';
+        echo '<td>';
+        echo '<a href="?view=player&uuid=' . $player->getUUID() . '" >';
+        echo $player->getName();
+        echo '</a>';
+        echo '</td>';
+        echo '<td>';
+        echo QueryUtils::formatDate($player->getLastLogin());
+        echo '</td>';
+        echo '<td>';
+        echo QueryUtils::formatDate($player->getFirstLogin());
+        echo '</td>';
+        echo '</tr>';
+    }
  ?>
 </table>
-	<?php
-		if ($numPages > 1) {
-		// Allow User to Go To Next Page
-		?>
-		<span id="pageSelector">
-		<?php if ($pageNumber > 1) { ?> <a href="./?view=playerList&<?php echo($thisTablePNGet); ?>=<?php echo($pageNumber - 1); ?>#<?php echo($thisTablePNAN); ?>"><< <?php echo(STRING_ALL_PREVIOUS); ?></a> <?php } ?>
-		<?php if ($pageNumber > 1) {
-			for ($x = 3; $x >= 1; --$x) {
-				$jumpToPage = $pageNumber - $x;
-				if ($jumpToPage >= 1) {
-				?>
-					<a href="./?view=playerList&<?php echo($thisTablePNGet); ?>=<?php echo($jumpToPage); ?>#<?php echo($thisTablePNAN); ?>"><?php echo($jumpToPage); ?></a>
-				<?php
-				}
-			}
-		}
-		?>
-		<font id="pageSelector_CurrentPage"><?php echo($pageNumber); ?></font>
-		<?php 
-		if ($pageNumber < $numPages) {
-			for ($x = 1; $x <= 3; ++$x) {
-				$jumpToPage = $pageNumber + $x;
-				if ($jumpToPage <= $numPages) {
-				?>
-					<a href="./?view=playerList&<?php echo($thisTablePNGet); ?>=<?php echo($jumpToPage); ?>#<?php echo($thisTablePNAN); ?>"><?php echo($jumpToPage); ?></a>
-				<?php
-				}
-			}
-		}
-		if ($pageNumber != $numPages) {
-		?>
-		<a href="./?view=playerList&<?php echo($thisTablePNGet); ?>=<?php echo($pageNumber + 1); ?>#<?php echo($thisTablePNAN); ?>"><?php echo(STRING_ALL_NEXT); ?> >></a>
-		<?php
-		}
-		?>
-		</span>
-		<?php
-		} 
-		?>
+<?php
+echo '<div id="pageSelector">';
+echo $pagination;
+echo '</div>';
