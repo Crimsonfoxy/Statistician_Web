@@ -55,7 +55,7 @@
         <?php echo(STRING_SERVER_SERVER_CURRENT_UPTIME); ?>:
     </span>
     <span id="info">
-        <?php echo(QueryUtils::formatSecs($serverObj->getUptimeInSeconds())); ?>
+        <?php echo $serverObj->getUptimeInSeconds(); ?>
     </span>
 </div>
 <div id="infoLine">

@@ -58,9 +58,9 @@ class SERVER {
         $sut = $this->getStartupTime();
         $sdt = $this->getLastShutdownTime();
         if($sdt > $sut)
-            return 0;
+            return 'Offline';
         $now = time();
-        return $now - $sut;
+        return QueryUtils::formatSecs($now - $sut);
     }
 
     public function getStartupTime() {
