@@ -1,6 +1,14 @@
 <div id="subTitle"><?php echo(STRING_SERVER_GLOBAL_ITEM_STATISTICS); ?></div>
 <table>
-	<th><?php echo(STRING_ALL_BLOCK_TYPE); ?></th><th><?php echo(STRING_ALL_PICKEDUP); ?></th><th><?php echo(STRING_ALL_DROPPED); ?></th>
+	<th>
+        <?php echo QueryUtils::getOrderLink('name', STRING_ALL_BLOCK_TYPE); ?>
+    </th>
+    <th>
+        <?php echo QueryUtils::getOrderLink('picked', STRING_ALL_PICKEDUP); ?>
+    </th>
+    <th>
+        <?php echo QueryUtils::getOrderLink('dropped', STRING_ALL_DROPPED); ?>
+    </th>
 	<?php
 	$query = QueryUtils::getItemList();
 	

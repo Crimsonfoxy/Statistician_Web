@@ -13,10 +13,18 @@ if($cat == 'pvp') {
     <table>
     <tr>
     	<th></th>
-    	<th><?php echo STRING_ALL_KILLER; ?></th>
-    	<th><?php echo STRING_ALL_WEAPON; ?></th>
-    	<th><?php echo STRING_ALL_VICTIM; ?></th>
-    	<th><?php echo STRING_ALL_KILLTIME; ?></th>
+    	<th>
+            <?php echo QueryUtils::getOrderLink('killer', STRING_ALL_KILLER); ?>
+        </th>
+    	<th>
+            <?php echo QueryUtils::getOrderLink('weapon', STRING_ALL_WEAPON); ?>
+        </th>
+    	<th>
+            <?php echo QueryUtils::getOrderLink('victim', STRING_ALL_VICTIM); ?>
+        </th>
+    	<th>
+            <?php echo QueryUtils::getOrderLink('time', STRING_ALL_KILLTIME); ?>
+        </th>
 	</tr>
     <?php
     
@@ -69,10 +77,18 @@ elseif($cat == 'pve') {
             <table>
             <tr>
             	<th></th>
-            	<th><?php echo STRING_ALL_KILLER; ?></th>
-            	<th><?php echo STRING_ALL_WEAPON; ?></th>
-            	<th><?php echo STRING_ALL_VICTIM; ?></th>
-            	<th><?php echo STRING_ALL_KILLTIME; ?></th>
+            	<th>
+                    <?php echo QueryUtils::getOrderLink('killer', STRING_ALL_KILLER); ?>
+                </th>
+            	<th>
+                    <?php echo QueryUtils::getOrderLink('weapon', STRING_ALL_WEAPON); ?>
+                </th>
+            	<th>
+                    <?php echo QueryUtils::getOrderLink('victim', STRING_ALL_VICTIM); ?>
+                </th>
+            	<th>
+                    <?php echo QueryUtils::getOrderLink('time', STRING_ALL_KILLTIME); ?>
+                </th>
         	</tr>
             <?php
             
@@ -139,9 +155,15 @@ else if($cat == 'other') {
                 <table>
                 <tr>
                 	<th></th>
-                	<th><?php echo STRING_ALL_VICTIM; ?></th>
-                	<th><?php echo STRING_ALL_REASON; ?></th>
-                	<th><?php echo STRING_ALL_KILLTIME; ?></th>
+                	<th>
+                        <?php echo QueryUtils::getOrderLink('victim', STRING_ALL_VICTIM); ?>
+                    </th>
+                	<th>
+                        <?php echo QueryUtils::getOrderLink('reason', STRING_ALL_REASON); ?>
+                    </th>
+                	<th>
+                        <?php echo QueryUtils::getOrderLink('time', STRING_ALL_KILLTIME); ?>
+                    </th>
             	</tr>
                 <?php
                 

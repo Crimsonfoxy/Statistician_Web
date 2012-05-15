@@ -48,9 +48,29 @@ class SERVER {
     }
 
     public function getPlayers($limit) {
+
+        $order = QueryUtils::getOrderType();
+
+        if(isset($_GET['by'])) {
+            switch (strtolower($_GET['by'])) {
+                case 'name':
+                default:
+                    $by = 'player_name';
+                    break;
+                case 'logon':
+                    $by = 'last_login';
+                    break;
+                case 'register':
+                    $by = 'firstever_login';
+                    break;
+            }
+        }
+        else
+            $by = 'player_name';
+
         return mysql_query('SELECT uuid
                             FROM players
-                            ORDER by player_name ASC
+                            ORDER by ' . $by . ' ' . $order . '
                             ' . $limit);
     }
 
@@ -213,6 +233,31 @@ class SERVER {
     }
 
     public function getPVPKills($limit) {
+
+        $order = QueryUtils::getOrderType(true);
+        if($order == '')
+            $order = 'DESC';
+
+        if(isset($_GET['by'])) {
+            switch(strtolower($_GET['by'])) {
+                case 'time':
+                default:
+                    $by = 'time';
+                    break;
+                case 'killer':
+                    $by = 'killer';
+                    break;
+                case 'victim':
+                    $by = 'victim';
+                    break;
+                case 'weapon':
+                    $by = 'weapon';
+                    break;
+            }
+        }
+        else
+            $by = 'time';
+
         return mysql_query('SELECT p.player_name killer,
 		    						p.uuid killerID,
 		    						p2.player_name victim,
@@ -225,7 +270,7 @@ class SERVER {
                                 INNER JOIN players p2 ON k.killed_uuid = p2.uuid
                                 WHERE k.killed = 999 
                                 	AND k.killed_by = 999
-                                ORDER BY time DESC 
+                                ORDER BY ' . $by . ' ' . $order . '
 		    					' . $limit . '');
     }
 
@@ -240,6 +285,31 @@ class SERVER {
     }
 
     public function getPVEKills($limit) {
+
+        $order = QueryUtils::getOrderType(true);
+        if($order == '')
+            $order = 'DESC';
+
+        if(isset($_GET['by'])) {
+            switch(strtolower($_GET['by'])) {
+                case 'time':
+                default:
+                    $by = 'time';
+                    break;
+                case 'killer':
+                    $by = 'killer_player';
+                    break;
+                case 'victim':
+                    $by = 'killed_player';
+                    break;
+                case 'weapon':
+                    $by = 'weapon';
+                    break;
+            }
+        }
+        else
+            $by = 'time';
+
         return mysql_query('SELECT r.description weapon,
 		    						c.creature_name killer, 
 		    						p.player_name killer_player, 
@@ -258,7 +328,7 @@ class SERVER {
                                 	AND k.killed_by != 18
                                 	AND k.killed != 0
                                 	AND k.killed != 18
-                                ORDER BY time DESC
+                                ORDER BY ' . $by . ' ' . $order . '
 		    					' . $limit . '');
     }
 
@@ -270,6 +340,28 @@ class SERVER {
     }
 
     public function getOtherKills($limit) {
+
+        $order = QueryUtils::getOrderType(true);
+        if($order == '')
+            $order = 'DESC';
+
+        if(isset($_GET['by'])) {
+            switch(strtolower($_GET['by'])) {
+                case 'time':
+                default:
+                    $by = 'k.time';
+                    break;
+                case 'victim':
+                    $by = 'killed';
+                    break;
+                case 'reason':
+                    $by = 'type';
+                    break;
+            }
+        }
+        else
+            $by = 'k.time';
+
         return mysql_query('SELECT p.player_name killed,
 		    						t.description type, 
 		    						k.time 
@@ -278,7 +370,7 @@ class SERVER {
                                 INNER JOIN players p ON k.killed_uuid = p.uuid
                                 WHERE killed_by = 0
                                 	OR killed_by = 18
-                                ORDER BY time DESC
+                                ORDER BY ' . $by . ' ' . $order . '
 		    					' . $limit . '');
     }
 

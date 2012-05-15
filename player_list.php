@@ -11,9 +11,15 @@ $pag->items_per_page = 30;
 </a>
 <table>
  <th></th>
-    <th><?php echo STRING_ALL_NAME; ?></th>
-    <th><?php echo STRING_PLAYER_LAST_LOGON; ?></th>
-    <th><?php echo STRING_PLAYER_JOIN_DATE; ?></th>
+    <th>
+        <?php echo QueryUtils::getOrderLink('name', STRING_ALL_NAME); ?>
+    </th>
+    <th>
+        <?php echo QueryUtils::getOrderLink('logon', STRING_PLAYER_LAST_LOGON); ?>
+    </th>
+    <th>
+        <?php echo QueryUtils::getOrderLink('register', STRING_PLAYER_JOIN_DATE); ?>
+    </th>
  <?php
     $pag->items_total = $serverObj->getAllPlayers();
     $pag->paginate();

@@ -1,6 +1,14 @@
 <div id="subTitle"><?php echo(STRING_SERVER_GLOBAL_BLOCK_STATISTICS); ?></div>
 <table>
-	<th><?php echo(STRING_ALL_BLOCK_TYPE); ?></th><th><?php echo(STRING_ALL_DESTROYED); ?></th><th><?php echo(STRING_ALL_PLACED); ?></th>
+	<th>
+        <?php echo QueryUtils::getOrderLink('name', STRING_ALL_BLOCK_TYPE); ?>
+    </th>
+    <th>
+        <?php echo QueryUtils::getOrderLink('destroyed', STRING_ALL_DESTROYED); ?>
+    </th>
+    <th>
+        <?php echo QueryUtils::getOrderLink('placed', STRING_ALL_PLACED); ?>
+    </th>
 	<?php
 	$query = QueryUtils::getBlockList();
 	

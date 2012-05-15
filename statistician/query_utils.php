@@ -35,21 +35,61 @@ class QueryUtils {
     }
 
     public static function getItemList() {
+
+        $order = self::getOrderType();
+
+        if(isset($_GET['by'])) {
+            switch(strtolower($_GET['by'])) {
+                case 'name':
+                default:
+                    $by = 'name';
+                    break;
+                case 'picked':
+                    $by = 'picked';
+                    break;
+                case 'dropped':
+                    $by = 'dropped';
+                    break;
+            }
+        }
+        else
+            $by = 'name';
+
 	return mysql_query('SELECT r.description name, 
 		    						SUM(p.num_pickedup) picked, 
 		    						SUM(p.num_dropped) dropped FROM pickup_drop p 
                                 LEFT JOIN resource_desc r ON p.item = r.resource_id
                                 GROUP BY p.item
-                                ORDER BY name ASC');
+                                ORDER BY ' . $by . ' ' . $order);
     }
 
     public static function getBlockList() {
-	return mysql_query('SELECT r.description name, 
+
+        $order = self::getOrderType();
+
+        if(isset($_GET['by'])) {
+            switch(strtolower($_GET['by'])) {
+                case 'name':
+                default:
+                    $by = 'name';
+                    break;
+                case 'placed':
+                    $by = 'placed';
+                    break;
+                case 'destroyed':
+                    $by = 'destroyed';
+                    break;
+            }
+        }
+        else
+            $by = 'name';
+
+	    return mysql_query('SELECT r.description name,
 		    						SUM(b.num_placed) placed, 
 		    						SUM(b.num_destroyed) destroyed FROM blocks b 
                                 LEFT JOIN resource_desc r ON b.block_id = r.resource_id
                                 GROUP BY b.block_id
-                                ORDER BY name ASC');
+                                ORDER BY ' . $by . ' ' . $order);
     }
 
     public static function getKillTypeIdByName($killTypeName) {
@@ -148,6 +188,50 @@ class QueryUtils {
 	}
 
 	return round(($dis / 1000000), 2) . ' ' . STRING_DISTANCE_MEGAMETERS;
+    }
+
+    public static function getOrderLink($by, $name) {
+        if(isset($_GET['order']) && strtolower($_GET['order']) == 'desc')
+            $order = 'asc';
+        else
+            $order = 'desc';
+
+        $querystring = $_SERVER['QUERY_STRING'];
+        $query_ar = explode('&', $_SERVER['QUERY_STRING']);
+        $active = false;
+        if(is_array($query_ar) && count($query_ar) > 2) {
+            parse_str($_SERVER['QUERY_STRING'], $query_parse);
+            $order_pos = array_search('order', array_keys($query_parse));
+            $by_pos = array_search('by', array_keys($query_parse));
+            if(isset($query_parse['by']) && $query_parse['by'] == $by)
+                $active = true;
+            unset($query_ar[$by_pos]);
+            unset($query_ar[$order_pos]);
+            $querystring = implode('&', $query_ar);
+        }
+
+        if($active) {
+            if($order == 'desc')
+                $arrow = '<img src="images/sort_down.png" alt="down" />';
+            else
+                $arrow = '<img src="images/sort_up.png" alt="up" />';
+        }
+        else
+            $arrow = '';
+
+        return '<a href="?' . $querystring . '&order=' . $order . '&by=' . $by . '">' . $name . ' ' . $arrow . '</a>';
+    }
+
+    public static function getOrderType($none=false) {
+        if(!isset($_GET['order']) && $none)
+            return '';
+        elseif(isset($_GET['order']) && strtolower($_GET['order']) == 'desc')
+            $order = 'DESC';
+        else
+            $order = 'ASC';
+
+
+        return $order;
     }
 
 }
