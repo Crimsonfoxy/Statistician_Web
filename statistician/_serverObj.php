@@ -29,7 +29,9 @@ class SERVER {
     }
 
     public function getAllPlayers() {
-        return mysql_num_rows(mysql_query('SELECT uuid FROM players'));
+        $search = $this->getSearchQuery();
+
+        return mysql_num_rows(mysql_query('SELECT uuid FROM players ' . $search));
     }
 
     public function getAllPlayersOnlineCount() {
@@ -68,8 +70,10 @@ class SERVER {
         else
             $by = 'player_name';
 
+        $search = $this->getSearchQuery();
         return mysql_query('SELECT uuid
                             FROM players
+                            ' . $search . '
                             ORDER by ' . $by . ' ' . $order . '
                             ' . $limit);
     }
@@ -434,6 +438,15 @@ class SERVER {
         $row = mysql_fetch_assoc(mysql_query('SELECT COUNT(id) count FROM kills
                                                 WHERE kill_type = ' . $typeID));
         return $row['count'];
+    }
+
+    private function getSearchQuery() {
+        if(isset($_GET['search']) &&  !empty($_GET['search'])) {
+            $search_string = (string)$_GET['search'];
+            return 'WHERE LOWER(player_name) LIKE "%' . $search_string . '%"';
+        }
+
+        return '';
     }
 
 }

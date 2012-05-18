@@ -34,7 +34,17 @@ $serverObj = $sObj->getServer();
 </head>
 
 <body>
-	<div id="topLeadBar"><div id="titleMain"></div><div id="creeper"></div></div>
+	<div id="topLeadBar">
+        <div id="titleMain"></div>
+        <div id="creeper"></div>
+        <div id="search">
+            <form action="./" method="get">
+                <input type="hidden" name="view" value="playerList">
+                <input type="text" name="search" value="">
+                <input type="submit" value="Search">
+            </form>
+        </div>
+    </div>
 	<div id="content">
         <div id="listTitle"><a href="./?view=main"><?php echo (SERVER_NAME); ?></a></div>
 		<?php

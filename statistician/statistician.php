@@ -11,7 +11,7 @@
                     $this->secureGlobals();	
                     @$sql_connection = mysql_connect(DB_SERVER . ':' . DB_PORT,DB_USER,DB_PASSWORD) or die("Statistician Web Interface could not acquire connection to Database");
                     @mysql_select_db(DB_NAME) or die("Statistician Web Interface connected to SQL server but could not select the database");
-
+                    $this->setTimeZone();
                     $this->_ObjServer = new SERVER();
 		}
 		
@@ -37,6 +37,11 @@
 			array_walk($_GET, array($this, 'secureSuperGlobalGET'));
 			array_walk($_POST, array($this, 'secureSuperGlobalPOST'));
 		}
+
+        private function setTimeZone() {
+            if(phpversion() >= '5.1.0' && TIMEZONE != '')
+                date_default_timezone_set(TIMEZONE);
+        }
 		
 		public function getServer() {
 			return $this->_ObjServer;
